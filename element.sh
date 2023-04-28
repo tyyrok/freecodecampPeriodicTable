@@ -29,6 +29,6 @@ else
     ELEMENT_TYPE=$(echo $CHECK_ELEMENT_IN_DB | cut -d "|" -f 5)
     ELEMENT_SYMBOL=$(echo $CHECK_ELEMENT_IN_DB | cut -d "|" -f 6)
     ELEMENT_NUMBER=$(echo $CHECK_ELEMENT_IN_DB | cut -d "|" -f 7)
-    echo -e "The element with atomic number $ELEMENT_NUMBER is $ELEMENT_NAME ($ELEMENT_SYMBOL). It's a $ELEMENT_TYPE, with a mass of $ELEMENT_MASS amu. $ELEMENT_NAME has a melting point of $ELEMENT_MELTING_POINT celsius and a boiling point of $ELEMENT_BOILING_POINT celcius."
+    echo -e "The element with atomic number $ELEMENT_NUMBER is $ELEMENT_NAME ($ELEMENT_SYMBOL). It's a $ELEMENT_TYPE, with a mass of $ELEMENT_MASS amu. $ELEMENT_NAME has a melting point of $ELEMENT_MELTING_POINT celsius and a boiling point of $ELEMENT_BOILING_POINT celsius."
   fi
 fi

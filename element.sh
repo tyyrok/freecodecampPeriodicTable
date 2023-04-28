@@ -5,9 +5,11 @@ then
   echo -e "Please provide an element as an argument."
 else
   #Check if element exists in table?
+  #Check if user typed number?
   if [[ $1 =~ ^[0-9]+$ ]]
   then
     CHECK_ELEMENT_IN_DB=$($PSQL "SELECT name, atomic_mass, melting_point_celsius, boiling_point_celsius, type, symbol, atomic_number FROM elements INNER JOIN properties USING (atomic_number) INNER JOIN types USING (type_id) WHERE atomic_number='$1'")
+  #Check if user typed symbol
   elif [[ $1 =~ ^[a-zA-Z]{,2}$ ]]
   then
     CHECK_ELEMENT_IN_DB=$($PSQL "SELECT name, atomic_mass, melting_point_celsius, boiling_point_celsius, type, symbol, atomic_number FROM elements INNER JOIN properties USING (atomic_number) INNER JOIN types USING (type_id) WHERE symbol='$1'")
